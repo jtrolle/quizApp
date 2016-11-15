@@ -13,13 +13,13 @@ body {
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
+.site-wrapper, .cover {
     display: table;
     width: 100%;
     height: 100%; /* For at least Firefox */
     min-height: 100%;
 }
-.site-wrapper-inner {
+.site-wrapper-inner, .cover-inner {
     display: table-cell;
     vertical-align: middle;
 }
@@ -36,11 +36,69 @@ body {
 /*
  * Cover
  */
-
-.cover {
+.content-wrapper {
     padding: 0 20px;
+
+    .btn-lg {
+        padding: 10px 20px;
+        font-weight: bold;
+    }
 }
-.cover .btn-lg {
-    padding: 10px 20px;
-    font-weight: bold;
+
+/*
+ * Quiz
+ */
+.quiz-wrapper {
+    .number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+    .question {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+}
+
+.question-card {
+    background-color: #fff;
+    border-width: 0;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    .transition(400ms linear all);
+
+    &.active {
+        .scale(1.2);
+    }
+}
+
+.question-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+
+    .proposals {
+        .proposal {
+            outline: none;
+            width: 140px;
+            margin: 0 auto;
+            display: block;
+
+            &.correct {
+                background-color: green;
+            }
+
+            &.wrong {
+                background-color: red;
+            }
+        }
+    }
 }
